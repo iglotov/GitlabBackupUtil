@@ -140,7 +140,8 @@ const cliProgress = require('cli-progress');
       }
     } else {
       console.log(`Cloning ${repoName}`)
-      const stdout = await cmdAsync(`git clone ${repo} "${repoPath}"`).catch(
+      const stdout = await cmdAsync(`git clone --mirror ${repo} ${repoPath}.git`).catch(
+
         console.log
       )
     }
